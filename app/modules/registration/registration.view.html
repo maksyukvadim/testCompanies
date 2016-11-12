@@ -1,31 +1,105 @@
-<div class="container">
-    <h1>Regist</h1>
-    <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" placeholder="Name " aria-describedby="sizing-addon1">
-    </div>
+<div layout="row" layout-wrap>
+    <div flex-xs="100" flex-offset-sm="20" flex-sm="60" flex-offset-md="25" flex-md="50"
+         flex-offset-lg="30" flex-lg="40" flex-offset-xl="30" flex-xl="40">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Sing up</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <form name="registrForm" novalidate>
+                    <div layout="row">
+                        <md-input-container flex="grow">
+                            <label>Name</label>
+                            <input name="name" ng-model="dataRegistration.name" required set-valid
+                                   minlength="3" maxlength="60">
+                            <div ng-messages="registrForm.name.$error">
+                                <div ng-message="nameServ">{{responseServer.message}}</div>
+                                <div ng-messages-include="views/message/message.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex="grow">
+                            <label>Second name</label>
+                            <input name="secondname" ng-model="dataRegistration.secondname" required set-valid
+                                   minlength="3" maxlength="60">
+                            <div ng-messages="registrForm.secondname.$error">
+                                <div ng-message="secondnameServ">{{responseServer.message}}</div>
+                                <div ng-messages-include="views/message/message.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
 
-    <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon3"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" placeholder="Second name " aria-describedby="sizing-addon1">
-    </div>
+                    <div layout="row">
+                        <md-input-container flex="grow">
+                            <label>Email</label>
+                            <input type="email" name="email" ng-model="dataRegistration.email" required set-valid>
+                            <div ng-messages="registrForm.email.$error">
+                                <div ng-message="emailServ">{{responseServer.message}}</div>
+                                <div ng-messages-include="views/message/message.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
 
-    <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon4"><i class="glyphicon glyphicon-envelope"></i></span>
-        <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
-    </div>
+                    <div layout="row">
+                        <md-input-container flex="grow">
+                            <label>Gender</label>
+                            <md-select name="gender" ng-model="dataRegistration.gender" set-valid>
+                                <md-option value="male">Male</md-option>
+                                <md-option value="female">Female</md-option>
+                            </md-select>
+                            <div ng-messages="registrForm.gender.$error">
+                                <div ng-message="genderServ">{{responseServer.message}}</div>
+                            </div>
+                        </md-input-container>
+                    </div>
 
-    <div class="form-group form-group-lg">
-        <select class="form-control" id="sel1">
-            <option>Male</option>
-            <option>Female</option>
-        </select>
-    </div>
+                    <div layout="row">
+                        <md-input-container flex="grow">
+                            <label>Password</label>
+                            <input type="password" name="pass" ng-model="dataRegistration.pass" required set-valid>
+                            <div ng-messages="registrForm.pass.$error">
+                                <div ng-message="passServ">{{responseServer.message}}</div>
+                                <div ng-messages-include="views/message/message.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
 
+                    <div layout="row">
+                        <md-input-container flex="grow">
+                            <md-checkbox name="checkboxCondition" ng-model="conditionAgreement" required>
+                                Conditions of Agreement
+                            </md-checkbox>
+                            <input type="checkbox" required name="checkboxCondition"
+                                   aria-label="Checkbox Condition" ng-model="conditionAgreement" style="display: none">
+                            <div ng-messages="registrForm.checkboxCondition.$error">
+                                <div ng-messages-include="views/message/message.html"></div>
+                            </div>
+                        </md-input-container>
+                    </div>
 
-    <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon5"><i class="glyphicon glyphicon-asterisk"></i></span>
-        <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+                    <div layout="row">
+                        <md-input-container flex="grow">
+                            <div ng-if="responseServer.status==='Error'">
+                                <p class="error-form">{{responseServer.message}}</p>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-button class="md-raised md-primary" ng-click="vm.touch(dataRegistration)">Submit</md-button>
+                    </div>
+                </form>
+            </md-card-content>
+        </md-card>
     </div>
 
 </div>
+
+
+
+
+
+
+
