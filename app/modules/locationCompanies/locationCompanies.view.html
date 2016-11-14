@@ -1,6 +1,7 @@
 <md-card class="location-companies md-whiteframe-11dp">
     <h2>Location</h2>
-        <canvas id="myChart">
+        <canvas id="myChart" ng-class="{'show-hide':show}">
         </canvas>
+    <md-progress-circular class="loader" ng-class="{'show-hide':!show}" md-mode="indeterminate"></md-progress-circular>
 </md-card>
 

@@ -10,10 +10,12 @@ export default class LocationCompaniesController {
     }
 
     init() {
+        this.$scope.show = true;
         this.$rootScope.$on('allCompanies', (event, data) => {
            this.makeCountriesMap(data);
             this.makeArrayColor(this.countriesMap.size);
             this.drawChart(Array.from(this.countriesMap.keys()), Array.from(this.countriesMap.values()), this.arrayColorForChart);
+            this.$scope.show = false;
         })
     }
 

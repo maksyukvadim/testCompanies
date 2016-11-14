@@ -1,8 +1,9 @@
 <md-card class="total-companies md-whiteframe-11dp">
     <h2>Total Companies</h2>
-    <md-card-content class="">
+    <md-card-content ng-class="{'show-hide':show}">
      <div class="circle">
          <span>{{allCompanies}}</span>
      </div>
     </md-card-content>
+    <md-progress-circular class="loader" ng-class="{'show-hide':!show}" md-mode="indeterminate"></md-progress-circular>
 </md-card>

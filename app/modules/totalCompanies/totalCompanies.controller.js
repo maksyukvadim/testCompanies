@@ -6,8 +6,10 @@ export default class TotalCompaniesController {
     }
 
     init() {
+        this.$scope.show = true;
         this.$rootScope.$on('allCompanies', (event, data) => {
             this.$scope.allCompanies = data.length;
+            this.$scope.show = false;
         })
     }
 

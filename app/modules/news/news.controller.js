@@ -10,8 +10,10 @@ export default class NewsController {
     }
 
     getNews() {
+        this.$scope.show = true;
         this.NewsService.getNews().then((response)=> {
             this.$scope.news = response.data.list;
+            this.$scope.show = false;
         })
     }
 

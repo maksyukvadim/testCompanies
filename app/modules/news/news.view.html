@@ -1,6 +1,6 @@
 <md-card class="news md-whiteframe-11dp">
     <h2>News</h2>
-        <md-content>
+        <md-content ng-class="{'show-hide':show}">
             <md-tabs md-dynamic-height md-border-bottom>
                 <md-tab label={{$index+1}} ng-repeat="slideNew in news">
                     <md-content>
@@ -18,6 +18,6 @@
                 </md-tab>
             </md-tabs>
         </md-content>
-
+    <md-progress-circular class="loader" ng-class="{'show-hide':!show}" md-mode="indeterminate"></md-progress-circular>
 </md-card>
 

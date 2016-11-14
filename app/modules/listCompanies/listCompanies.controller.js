@@ -7,8 +7,10 @@ export default class ListCompaniesController {
     }
 
     init() {
+        this.$scope.show = true;
         this.ListCompaniesService.getListCompanies().then((response) => {
             this.$scope.listCompanies = response.data;
+            this.$scope.show = false;
             this.eventAllCompanies(response);
 
         })

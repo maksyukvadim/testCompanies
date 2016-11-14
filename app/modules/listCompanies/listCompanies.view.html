@@ -1,10 +1,11 @@
 <md-card class="list-companies md-whiteframe-11dp">
     <h2>List of Companies</h2>
-    <md-card-content class="content">
+    <md-card-content class="content" ng-class="{'show-hide':show}">
         <p class="md-whiteframe-1dp"  ng-repeat="company in listCompanies.list"
            ng-click="vm.eventPartnersCompany(company.partners, $index)" ng-class="{activeCompany: $index == selected}">
             {{company.name}}
         </p>
     </md-card-content>
+    <md-progress-circular class="loader" ng-class="{'show-hide':!show}" md-mode="indeterminate"></md-progress-circular>
 </md-card>
 
