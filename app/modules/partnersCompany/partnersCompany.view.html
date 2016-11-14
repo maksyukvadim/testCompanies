@@ -1,1 +1,19 @@
-<h1>partner</h1>
+<md-card class="partners-company md-whiteframe-11dp">
+    <h2>Company partners</h2>
+    <md-card-content >
+        <div class="wrap-block-partner">
+
+            <div class="block-partner" ng-repeat="partner in partners">
+                <div class="circle-little">
+                    <span>{{partner.value}}%</span>
+                </div>
+                <div class="rectangle">
+                </div>
+                <div class="block-partner-content">
+                    <span>{{partner.name}}</span>
+                </div>
+            </div>
+
+        </div>
+    </md-card-content>
+</md-card>

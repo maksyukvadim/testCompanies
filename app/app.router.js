@@ -9,12 +9,7 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       }
     )
       .state('companies', {
-          template:
-          '<div ui-view="totalCompanies"></div>' +
-          '<div ui-view="listCompanies"></div>' +
-          '<div ui-view="partnersCompany"></div>' +
-          '<div ui-view="locationCompanies"></div>' +
-          '<div ui-view="news"></div>'
+          templateUrl: 'views/companies/companies.view.html',
       })
       .state('companies.all', {
               url: '/all',

@@ -1,1 +1,23 @@
-<h1>news</h1>
+<md-card class="news md-whiteframe-11dp">
+    <h2>News</h2>
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label={{$index+1}} ng-repeat="slideNew in news">
+                    <md-content>
+                        <figure>
+                            <p><img src={{slideNew.img}} alt="img" width="50%" height="50%"></p>
+                            <figcaption>{{slideNew.author}}</figcaption>
+                        </figure>
+                        <div class="news-caption">
+                            <p>
+                                {{slideNew.description}}
+                            </p>
+                        </div>
+                        <span class="date"><i>{{vm.getDate(slideNew.date * 1000)}}</i></span>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+
+</md-card>
+
