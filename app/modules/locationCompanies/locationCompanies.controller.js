@@ -2,17 +2,19 @@ export default class LocationCompaniesController {
     constructor($scope,$rootScope) {
         this.$scope = $scope;
         this.$rootScope = $rootScope;
-        this.countriesMap = new Map();
-        this.arrayColorForChart = [];
          this.init();
 
 
     }
 
     init() {
+        this.countriesMap = new Map();
+        this.arrayColorForChart = [];
         this.$scope.show = true;
+        this.$scope.invisible = false;
         this.$rootScope.$on('allCompanies', (event, data) => {
-           this.makeCountriesMap(data);
+            this.listCountries = data;
+            this.makeCountriesMap(data);
             this.makeArrayColor(this.countriesMap.size);
             this.drawChart(Array.from(this.countriesMap.keys()), Array.from(this.countriesMap.values()), this.arrayColorForChart);
             this.$scope.show = false;
@@ -64,6 +66,23 @@ export default class LocationCompaniesController {
             this.arrayColorForChart[i] = this.getRandomColor();
      }
     }
+
+    takeCountry(event) {
+        var activePoints = this.$scope.myPieChart.getElementAtEvent(event);
+        this.$scope.listCopanies = this.getCompaniesByCountry(activePoints[0]._model.label);
+        this.$scope.invisible = true;
+    }
+
+    getCompaniesByCountry(country) {
+        let arrCountries = [];
+        for(let i = 0; i<this.listCountries.length; i++) {
+            if(country == this.listCountries[i].location.name) {
+                arrCountries.push(this.listCountries[i].name);
+            }
+        }
+        return arrCountries;
+    }
+
 
 }
 

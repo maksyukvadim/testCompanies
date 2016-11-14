@@ -1,6 +1,6 @@
 html {
   -moz-user-select: none;
-  -ms-user-select: none; 
+  -ms-user-select: none;
   -o-user-select: none;
   -webkit-user-select: none;
 }
@@ -14,7 +14,7 @@ html {
   opacity: 1;
   margin-top: 0;
   padding-top: 5px;
-  color: rgb(221,44,0);
+  color: rgb(221, 44, 0);
 }
 
 .block-card {
@@ -38,7 +38,6 @@ html {
   outline: none;
 }
 
-
 .content p:hover {
   cursor: pointer;
   background: #536DFE;
@@ -46,7 +45,7 @@ html {
 }
 
 .activeCompany {
-  border:none;
+  border: none;
   background: #536DFE !important;
 }
 
@@ -67,29 +66,32 @@ html {
   color: #ffffff;
 
 }
+
 .title .md-headline {
   font-weight: 600;
 }
+
 .md-card-title-text {
   color: #fff;
 }
 
 .circle {
-  position: relative;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 30vh;
   height: 30vh;
   background: #FBC02D;
   -moz-border-radius: 15vh;
   -webkit-border-radius: 15vh;
   border-radius: 15vh;
-  text-align: center;
+  transform: translate(-50%, -50%);
 }
 
 .circle span {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
   font-size: 30px;
@@ -111,7 +113,7 @@ html {
 .circle-little span {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
   color: #ffffff;
@@ -122,15 +124,13 @@ html {
 }
 
 .partners-company {
-  overflow-x:auto;
-  overflow-y:hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .wrap-block-partner {
-  margin-top: 4em;
   white-space: nowrap;
 }
-
 
 .rectangle {
   margin: 0 auto;
@@ -157,7 +157,7 @@ html {
   display: block;
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 18px;
   color: #ffffff;
@@ -168,10 +168,13 @@ html {
   width: 80% !important;
   height: 80% !important;
   margin: 0 auto;
+  outline: none;
 }
+
 .news figure {
   text-align: center;
 }
+
 .news-caption {
   padding: 0 20px 20px 20px;
 }
@@ -180,8 +183,8 @@ html {
   margin: 0;
 }
 
-  .show-hide {
-  display: none!important;
+.show-hide {
+  display: none !important;
 }
 
 .date {
@@ -189,10 +192,11 @@ html {
   padding: 10px;
   right: 0;
 }
+
 .loader {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -209,8 +213,6 @@ html {
 }
 
 .partners-company-title i {
-  position: relative;
-  right: 0;
   float: right;
   color: #fff;
   padding: 0 5px;
@@ -218,6 +220,19 @@ html {
 }
 
 .partners-company-title i:hover {
+  cursor: pointer;
+  color: #aab7fd;
+}
+
+.back-ico {
+  position: absolute;
+  padding-right: 20px;
+  right: 0;
+  font-size: 30px;
+  outline: none;
+}
+
+.back-ico:hover {
   cursor: pointer;
   color: #aab7fd;
 }

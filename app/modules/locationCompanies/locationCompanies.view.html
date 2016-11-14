@@ -1,7 +1,17 @@
-<md-card class="location-companies md-whiteframe-11dp">
+<md-card class="location-companies md-whiteframe-11dp" ng-class="{'show-hide':invisible}">
     <h2>Location</h2>
-        <canvas id="myChart" ng-class="{'show-hide':show}">
+        <canvas id="myChart" ng-class="{'show-hide':show}" ng-click="vm.takeCountry($event)">
         </canvas>
     <md-progress-circular class="loader" ng-class="{'show-hide':!show}" md-mode="indeterminate"></md-progress-circular>
 </md-card>
 
+<md-card class="list-companies md-whiteframe-11dp" ng-class="{'show-hide':!invisible}">
+    <h2>List of Companies
+        <i ng-click="invisible=false" class="large material-icons back-ico">keyboard_backspace
+    </i></h2>
+    <md-card-content class="content" >
+        <p class="md-whiteframe-1dp"  ng-repeat="company in listCopanies track by $index">
+            {{company}}
+        </p>
+    </md-card-content>
+</md-card>
