@@ -7,7 +7,11 @@ export default class PartnersCompanyController {
     }
 
     init() {
+        this.$scope.sortType = 'name';
+        this.$scope.sortReverse = false;
         this.watchPartners();
+
+
     }
 
     watchPartners() {

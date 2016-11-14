@@ -1,9 +1,13 @@
 <md-card class="partners-company md-whiteframe-11dp">
-    <h2>Company partners</h2>
+    <span class="partners-company-title">
+        <h2>Company partners</h2>
+        <i class="material-icons" ng-click="sortType = 'value'; sortReverse = !sortReverse">swap_vert</i>
+        <i class="material-icons" ng-click="sortType = 'name'; sortReverse = !sortReverse">sort_by_alpha</i>
+    </span>
+
     <md-card-content >
         <div class="wrap-block-partner">
-
-            <div class="block-partner" ng-repeat="partner in partners">
+            <div class="block-partner" ng-repeat="partner in partners | orderBy:sortType:sortReverse ">
                 <div class="circle-little">
                     <span>{{partner.value}}%</span>
                 </div>
@@ -13,7 +17,6 @@
                     <span>{{partner.name}}</span>
                 </div>
             </div>
-
         </div>
     </md-card-content>
 </md-card>

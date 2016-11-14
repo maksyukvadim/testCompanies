@@ -1,3 +1,10 @@
+html {
+  -moz-user-select: none;
+  -ms-user-select: none; 
+  -o-user-select: none;
+  -webkit-user-select: none;
+}
+
 .error-form {
   font-size: 12px;
   line-height: 14px;
@@ -48,7 +55,7 @@
   height: 50vh;
 }
 
-.list-companies h2, .total-companies h2, .partners-company h2, .news h2, .location-companies h2 {
+.list-companies h2, .total-companies h2, .news h2, .location-companies h2 {
   margin: 0;
   padding: 10px;
   background: #E91E63;
@@ -124,9 +131,6 @@
   white-space: nowrap;
 }
 
-.partners-company h2 {
-  position: absolute;
-}
 
 .rectangle {
   margin: 0 auto;
@@ -138,8 +142,8 @@
 
 .block-partner-content {
   margin: 0 auto;
-  width: 18vh;
-  height: 10vh;
+  width: 16vh;
+  height: 9vh;
   background: #6A1B9A;
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
@@ -192,4 +196,28 @@
   transform: translate(-50%, -50%);
 }
 
+.partners-company-title {
+  background: #E91E63;
+  padding: 12px;
+}
 
+.partners-company-title h2 {
+  position: absolute;
+  margin: 0;
+  background: #E91E63;
+  color: #ffffff;
+}
+
+.partners-company-title i {
+  position: relative;
+  right: 0;
+  float: right;
+  color: #fff;
+  padding: 0 5px;
+  outline: none;
+}
+
+.partners-company-title i:hover {
+  cursor: pointer;
+  color: #aab7fd;
+}
