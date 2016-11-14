@@ -171,18 +171,6 @@ html {
   outline: none;
 }
 
-.news figure {
-  text-align: center;
-}
-
-.news-caption {
-  padding: 0 20px 20px 20px;
-}
-
-.news-caption p {
-  margin: 0;
-}
-
 .show-hide {
   display: none !important;
 }
@@ -236,3 +224,43 @@ html {
   cursor: pointer;
   color: #aab7fd;
 }
+
+
+.news-description {
+  height: 100%;
+  text-overflow: ellipsis;
+}
+
+.news-description p {
+  margin: 0;
+  height: 80%;
+}
+
+
+.news md-content {
+  overflow: hidden;
+  height: 100%;
+}
+
+.right-block, .left-block {
+  height: 100%;
+  padding: 3%;
+}
+
+.left-block {
+  position: relative;
+
+}
+
+.wrap-img-news {
+  position: absolute;
+  width: 100%;
+}
+
+.wrap-img-new img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
